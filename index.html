@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạp Hóa CodeGym</title>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+
+<body>
+    <div class="banner">
+        <img src="photos/bannerMall.png" alt="banner">
+    </div>
+    <div class="container">
+        <div class="products">
+            <!-- <div class="specific-product">
+                <div class="product-photo">
+                    <img src="https://target.scene7.com/is/image/Target/GUEST_9eaa17f5-6d12-43ae-b05d-70f9fbe92550?qlt=85&fmt=webp&hei=199&wid=199"
+                        alt="product.photo">
+                </div>
+                <p class="product-name">OREO Chocolate Sandwich Cookies Family Size - 19.1oz</p>
+                <p class="status">Sold count: 12 | Left: 500</p>
+                <p class="product-price">20000</p>
+                <div class="add-button">
+                    <button class="add-to-cart" onclick="addToCart(
+                        'png',
+                        'OREO Chocolate Sandwich Cookies Family Size - 19.1oz',
+                        '20000'
+                    )">Add to cart</button>
+                </div>
+                <div class="edit-button">
+                    <button class="edit-product" onclick="editProduct()">Edit</button>
+                </div>
+                <div class="delete-button">
+                    <button class="delete-product" onclick="editProduct()">Delete</button>
+                </div>
+            </div> -->
+        </div>
+        <div class="add-product">
+            <img onclick="handleAddProductClick()" class="add-product-button" onmouseout="addProductButtonDefault()" onmouseover="addProductButton()"
+                src="photos/addNotYet.png" alt="addProduct">
+        </div>
+        <div class="input-table">
+            <div class="closeEdit">
+                <img onclick="closeEditTable()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/OOjs_UI_icon_close-ltr-destructive.svg/768px-OOjs_UI_icon_close-ltr-destructive.svg.png" alt="">
+            </div>
+            <form>
+                <table>
+                    <caption>
+                        <h2><span style="color: red;">Input</span> Product Description</h2>
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="inputting-product-name">Name</label>
+                            </td>
+                            <td colspan="3">
+                                <input id="inputting-product-name" type="text" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="inputting-product-photo">Photo</label>
+                            </td>
+                            <td colspan="3">
+                                <input id="inputting-product-photo" type="text" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="inputting-product-quantity">Quantity</label>
+                            </td>
+                            <td>
+                                <input id="inputting-product-quantity" type="number" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="inputting-product-price">Price</label>
+                            </td>
+                            <td colspan="3">
+                                <input id="inputting-product-price" type="number" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button onclick="handleAddProduct()" id="input-submit-button" type="button">Add</button>
+                            </td>
+                            <td colspan="2">
+                                <button id="input-reset-button" type="reset">Clear</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="edit-table">
+            <div class="closeEdit">
+                <img onclick="closeEditTable()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/OOjs_UI_icon_close-ltr-destructive.svg/768px-OOjs_UI_icon_close-ltr-destructive.svg.png" alt="">
+            </div>
+            <form>
+                <input type="hidden" id="idEdit" />
+                <table>
+                    <caption>
+                        <h2><span style="color: red;">Edit</span> Product Description</h2>
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="editting-product-name">Name</label>
+                            </td>
+                            <td colspan="3">
+                                <input id="editting-product-name" type="text" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editting-product-photo">Photo</label>
+                            </td>
+                            <td colspan="3">
+                                <input id="editting-product-photo" type="text" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editting-product-sold-count">Sold count</label>
+                            </td>
+                            <td>
+                                <input id="editting-product-sold-count" type="number" required>
+                            </td>
+                            <td>
+                                <label for="editting-product-quantity">Quantity</label>
+                            </td>
+                            <td>
+                                <input id="editting-product-quantity" type="number" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editting-product-price">Price</label>
+                            </td>
+                            <td colspan="3">
+                                <input id="editting-product-price" type="number" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button onclick="handleEditProduct()" id="edit-submit-button" type="button">Edit</button>
+                            </td>
+                            <td colspan="2">
+                                <button id="edit-reset-button" type="reset">Clear</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="shoppingCart">
+            <div class="sticky-table">
+                <table border="1">
+                    <caption>
+                        <h3>Shopping Cart</h3>
+                    </caption>
+                    <thead>
+                        <th colspan="2">Product Name & Details</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </thead>
+                    <tbody class="cart-body">
+                        <!-- <tr>
+                            <td width="15%">
+                                <img class="detail"
+                                    src="https://target.scene7.com/is/image/Target/GUEST_9eaa17f5-6d12-43ae-b05d-70f9fbe92550?qlt=85&fmt=webp&hei=199&wid=199"
+                                    alt="product.photo">
+                            </td>
+                            <td>
+                                OREO Chocolate Sandwich Cookies Family Size - 19.1oz
+                            </td>
+                            <td>
+                                20000
+                            </td>
+                            <td>
+                                <input id="quantity" size="1" value="1" type="text" readonly>
+                            </td>
+                            <td>
+                                20000
+                            </td>
+                            <td>
+                                <img class="delete" src="photos/delete.png" alt="delete">
+                            </td>
+                        </tr> -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Total Price</td>
+                            <td colspan="2">0</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <button>Check Out</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.banner {
+    display: block;
+    margin: 0;
+}
+
+.banner>img {
+    display: block;
+    width: 1457px;
+}
+
+.container {
+    width: 1457px;
+}
+
+.products {
+    /* border: 1px solid red; */
+    width: 74%;
+    float: left;
+}
+.add-product{
+    position: fixed;
+    bottom: 2px;
+    left: 2px;
+    display: block;
+}
+.add-product>img{
+    height: 50px;
+    cursor: pointer;
+}
+.specific-product {
+    height: 375px;
+    float: left;
+    border-radius: 8px;
+    width: 20%;
+    /* border: 1px solid blue; */
+    background-color: rgba(130, 125, 131, 0.393);
+    padding: 5px;
+    margin: 5px;
+    position: relative;
+}
+
+.specific-product>.product-photo>img {
+    height: 206px;
+    border-radius: 8px;
+}
+.specific-product>.product-photo>img:hover{
+    transform:rotate(10deg);
+    transition: 1s;
+}
+.specific-product:hover>.add-button {
+    display: block;
+}
+.specific-product:hover>.edit-button {
+    display: block;
+}
+.specific-product:hover>.delete-button {
+    display: block;
+}
+
+.product-photo {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.product-name {
+    color: brown;
+    font-size: larger;
+    height: 30%;
+}
+
+.status {
+    color: dimgray;
+    font-size: smaller;
+}
+
+.product-price {
+    font-weight: bolder;
+    font-size: large;
+    text-align: left;
+}
+
+.specific-product:hover {
+    box-shadow: 0 0 12px green;
+}
+
+.specific-product>.add-button {
+    display: none;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+.specific-product>.edit-button {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.specific-product>.delete-button {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.add-to-cart {
+    background-color: orangered;
+    padding: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.edit-product{
+    background-color: green;
+    padding: 3px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 50px;
+}
+.delete-product{
+    background-color: red;
+    padding: 3px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 50px;
+}
+
+.shoppingCart {
+    position: relative;
+    float: left;
+    width: 25%;
+}
+
+div.sticky-table {
+    position: sticky;
+    top: 0;
+}
+
+h3 {
+    text-align: left;
+}
+
+.shoppingCart>.sticky-table>table {
+    width: 368.5px;
+    padding: 5px;
+    border-collapse: collapse;
+    border-radius: 8px;
+    border: none;
+    border-color: brown;
+}
+
+.shoppingCart>.sticky-table>table>caption {
+    padding: 15px;
+    color: forestgreen;
+    background-color: whitesmoke;
+}
+
+.shoppingCart>.sticky-table>table>thead {
+    background-color: pink;
+}
+.shoppingCart>.sticky-table>table>tfoot>tr>td{
+    font-weight: bolder;
+    text-align: right;
+    border: none;
+}
+.shoppingCart>.sticky-table>table>tfoot>tr>td>button{
+    padding: 10px;
+    background-color: darkcyan;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px thick black;
+}
+
+.shoppingCart>.sticky-table>table>tbody>tr:nth-child(even) {
+    background-color: rgba(152, 211, 195, 0.956);
+}
+
+.shoppingCart>.sticky-table>table>tbody>tr:nth-child(odd) {
+    background-color: rgba(147, 233, 162, 0.956);
+}
+
+table>tbody>tr>td>img.delete {
+    width: 30px !important;
+}
+
+.shoppingCart>.sticky-table>table>tbody>tr>td {
+    padding: 2px;
+}
+
+.shoppingCart>.sticky-table>table>tbody>tr>td>img {
+    width: 100%;
+}
+
+#quantity {
+    background-color: yellowgreen;
+    border-radius: 4px;
+}
+
+table>tbody>tr>td>button {
+    border: none;
+}
+
+table>tbody>tr>td>img.delete:hover {
+    cursor: pointer;
+}
+.input-table,.edit-table{
+    position: fixed;
+    top: 0px;
+    left: 550px;
+    display: none;
+}
+.input-table>form{
+    border-radius: 8px;
+    width: 400px;
+    padding: 10px;
+    background-color: lightslategrey;
+}
+.edit-table>form{
+    border-radius: 8px;
+    width: 400px;
+    padding: 10px;
+    background-color: lightslategrey;
+}
+.input-table>form>table>tbody>tr>td{
+    text-align: right;
+    width: 25%;
+}
+.edit-table>form>table>tbody>tr>td{
+    text-align: right;
+    width: 25%;
+}
+.input-table>form>table>tbody>tr>td>input{
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    margin: 8px;
+    padding: 4px;
+}
+.edit-table>form>table>tbody>tr>td>input{
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    margin: 8px;
+    padding: 4px;
+}
+.input-table>form>table>tbody>tr>td>#input-submit-button{
+    background-color: forestgreen;
+}
+.edit-table>form>table>tbody>tr>td>#edit-submit-button{
+    background-color: forestgreen;
+}
+.input-table>form>table>tbody>tr>td>#input-reset-button{
+    background-color: darkgrey;
+}
+.edit-table>form>table>tbody>tr>td>#edit-reset-button{
+    background-color: darkgrey;
+}
+.input-table>form>table>tbody>tr>td>button{
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 8px !important;
+    font: bolder;
+}
+.edit-table>form>table>tbody>tr>td>button{
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 8px !important;
+    font: bolder;
+}
+.input-table>form>table>tbody>tr>td>button:hover{
+    cursor: pointer;
+}
+.edit-table>form>table>tbody>tr>td>button:hover{
+    cursor: pointer;
+}
+.closeEdit>img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+}
+.closeEdit>img:hover{
+    cursor: pointer;
+}
